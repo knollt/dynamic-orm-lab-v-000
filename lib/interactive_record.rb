@@ -89,7 +89,7 @@ class InteractiveRecord
       WHERE #{column} = #{value}
       SQL
 
-    DB[:conn].execute(sql, value);
+    DB[:conn].execute(sql, value)
   end
   
 end
