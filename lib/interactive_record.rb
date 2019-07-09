@@ -81,15 +81,15 @@ class InteractiveRecord
     #WHERE name = ? OR grade = ? OR id = ?
     #attribute is a hash, so it has a key/value pair
     
-    column_name = attribute.keys[0].to_s
-    value_name = attribute[attribute.keys[0]]
+    column = attribute.keys[0].to_s
+    value = attribute[attribute.keys[0]]
 
     sql = <<-SQL
       SELECT * FROM #{self.table_name}
-      WHERE #{column_name} = #{value_name}
+      WHERE #{column} = #{value}
       SQL
 
-    DB[:conn].execute(sql, value_name);
+    DB[:conn].execute(sql, value);
   end
   
 end
