@@ -82,7 +82,7 @@ class InteractiveRecord
     #attribute is a hash, so it has a key/value pair
     
     column_name = attribute.keys[0].to_s
-    value_name = attribute.values[0]
+    value_name = attribute[attribute.keys[0]]
 
     sql = <<-SQL
       SELECT * FROM #{self.table_name}
